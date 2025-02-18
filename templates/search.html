@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بحث عن الأشخاص</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>بحث عن الأشخاص حسب العمر أو الاسم</h2>
+        <form action="/search" method="post">
+            <label for="age">العمر:</label>
+            <input type="number" id="age" name="age"><br>
+
+            <label for="name">الاسم:</label>
+            <input type="text" id="name" name="name"><br>
+
+            <input type="submit" value="بحث">
+        </form>
+
+        <h3>النتائج:</h3>
+        <ul>
+            {% for user in results %}
+                <li>الاسم: {{ user[3] }} - الوزن: {{ user[1] }} - العمر: {{ user[2] }}</li>
+            {% endfor %}
+        </ul>
+        
+
+        <a href="/">رجوع</a>
+    </div>
+</body>
+</html>
