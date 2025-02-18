@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بحث عن الأشخاص</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>بحث عن الأشخاص حسب العمر أو الاسم</h2>
+        <form action="/search" method="post">
+            <label for="phone">رقم الهاتف:</label>
+            <input type="text" id="phone" name="phone"><br>
+            <input type="submit" value="بحث">
+        </form>
+        
+
+        <h3>النتائج:</h3>
+        <ul>
+            {% for user in results %}
+                <li>
+                    <div class="user-details">
+                        <span>الاسم: {{ user[1] }} - الوزن: {{ user[2] }} - العمر: {{ user[3] }} - رقم الهاتف: {{ user[4] }}</span>
+                        
+                        <!-- Update Diet Form -->
+                        <form action="/update_diet/{{ user[0] }}" method="post" class="update-form">
+                            <label for="diet">النظام الغذائي:</label>
+                            <textarea name="diet">{{ user.diet }}</textarea><br>
+                            <input type="submit" value="تعديل النظام الغذائي">
+                        </form>
+                        
+                        <!-- Delete Button -->
+                        <form action="/delete_user/{{ user[0] }}" method="get" class="delete-form">
+                            <input type="submit" value="حذف" class="delete-btn">
+                        </form>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+        
+
+        
+        
+        
+
+        <a href="/">رجوع</a>
+    </div>
+</body>
+</html>

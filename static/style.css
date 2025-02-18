@@ -1,0 +1,219 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Body with Animated Background */
+body {
+    background: linear-gradient(45deg, #74ebd5, #9face6, #6a9bca);
+    background-size: 300% 300%;
+    animation: backgroundAnimation 10s ease infinite;
+    color: #333;
+    line-height: 1.6;
+    padding-top: 50px; /* Adjusted for fixed navigation */
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Background animation */
+@keyframes backgroundAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #007bff;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 15px;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+    color: white;
+    font-size: 18px;
+    padding: 0 15px;
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #0056b3;
+}
+
+/* Form Styles */
+form {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover effect for form */
+form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Form inputs and text areas */
+form input[type="text"],
+form input[type="number"],
+form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+form input[type="text"]:focus,
+form input[type="number"]:focus,
+form textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Submit Button */
+form input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+form input[type="submit"]:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Buttons: Back and Search */
+a.btn {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+a.btn:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+/* Delete Button */
+.delete-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+    transform: translateY(-2px);
+}
+
+/* List Items */
+ul li {
+    background-color: #fff;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: box-shadow 0.3s ease;
+}
+
+/* Hover effect for list items */
+ul li:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* User details and button container */
+.user-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* Update Form */
+.update-form {
+    flex-grow: 1;
+    margin-right: 15px;
+}
+
+/* Footer */
+footer {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+footer a {
+    color: white;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    form input[type="submit"],
+    form textarea {
+        font-size: 14px;
+    }
+
+    nav {
+        padding: 10px;
+    }
+
+    nav a {
+        font-size: 16px;
+        padding: 0 10px;
+    }
+
+    footer {
+        padding: 10px;
+    }
+}

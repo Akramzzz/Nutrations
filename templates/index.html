@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إدخال البيانات</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>إدخال الوزن والعمر</h2>
+        <form action="/add" method="post">
+            الاسم: <input type="text" name="name" required><br>
+            الوزن: <input type="number" name="weight" required><br>
+            العمر: <input type="number" name="age" required><br>
+            الهاتف: <input type="text" name="phone" required><br>
+            النظام الغذائي: <textarea name="diet" required></textarea><br>
+            <input type="submit" value="إضافة">
+        </form>
+        
+        
+        
+        
+        <a href="/search">بحث عن الأشخاص</a>
+
+    </div>
+</body>
+</html>
